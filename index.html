@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Зодрӯз муборак, Мавлуда!</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+    html, body {
+      margin: 0; padding: 0;
+      min-height: 100vh;
+      width: 100vw;
+      overflow-x: hidden;
+      font-family: 'Montserrat', Arial, sans-serif;
+      background: #18182a;
+    }
+    body {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+    .neon-bg {
+      position: fixed;
+      z-index: 0;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      pointer-events: none;
+      background: radial-gradient(circle at 80% 20%, #ff00de55 0%, #18182a 60%),
+                  radial-gradient(circle at 20% 80%, #00fff755 0%, #18182a 60%);
+      animation: bgmove 8s linear infinite alternate;
+    }
+    @keyframes bgmove {
+      0% { filter: blur(0px) brightness(1); }
+      100% { filter: blur(2px) brightness(1.08); }
+    }
+    .main-card {
+      z-index: 2;
+      margin-top: 18px;
+      background: rgba(24,24,42,0.92);
+      border-radius: 14px;
+      box-shadow: 0 0 18px #00fff7, 0 0 22px #ff00de;
+      padding: 10px 2vw 10px 2vw;
+      max-width: 340px;
+      width: 99vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .neon-heart {
+      width: 38px; height: 34px;
+      margin-bottom: 8px;
+      position: relative;
+      filter: drop-shadow(0 0 12px #ff00de) drop-shadow(0 0 18px #00fff7);
+      animation: pulse 1.5s infinite;
+    }
+    .neon-heart svg { width: 100%; height: 100%; display: block; }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+    }
+    .neon-title {
+      color: #fff;
+      font-size: 1.25rem;
+      text-align: center;
+      text-shadow: 0 0 10px #00fff7, 0 0 20px #ff00de;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .neon-message {
+      color: #fff;
+      font-size: 0.98rem;
+      text-align: center;
+      margin-bottom: 14px;
+      text-shadow: 0 0 6px #00fff7;
+    }
+    .slider-photo-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      max-width: 320px;
+      position: relative;
+    }
+    .slider-photo {
+      width: 90vw;
+      max-width: 320px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 18px;
+      box-shadow: 0 0 24px #0ff, 0 0 48px #00f7, 0 8px 24px #000a;
+      border: 3px solid #0ff;
+      outline: 2px solid #fff3;
+      outline-offset: 2px;
+      background: #111;
+      transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
+      filter: brightness(1.08) saturate(1.2);
+      margin-bottom: 10px;
+    }
+    .photo-caption {
+      color: #0ff;
+      font-size: 0.85em;
+      text-align: center;
+      text-shadow: 0 0 8px #00f, 0 0 16px #fff;
+      background: rgba(0,0,32,0.45);
+      border-radius: 12px;
+      padding: 4px 4px;
+      max-width: 98%;
+      box-shadow: 0 0 8px #0ff3;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2px;
+    }
+    .slider-arrow {
+      background: linear-gradient(90deg,#0ff,#00f);
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.1em;
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
+      box-shadow: 0 0 12px #0ff, 0 0 24px #00f7;
+      transition: background 0.2s;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.92;
+      z-index: 2;
+      padding: 0;
+    }
+    #arrowLeft { left: 4px; }
+    #arrowRight { right: 4px; }
+    .slider-photo-block { padding: 0 48px; }
+    .thumbnails-row {
+      display: flex;
+      flex-direction: row;
+      gap: 7px;
+      margin: 10px 0 0 0;
+      overflow-x: auto;
+      width: 100%;
+      padding-bottom: 4px;
+      justify-content: center;
+      scrollbar-width: thin;
+    }
+    .thumbnail {
+      width: 44px;
+      height: 44px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #0ff3;
+      box-shadow: 0 0 8px #00fff7aa;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: border 0.2s, opacity 0.2s, box-shadow 0.2s;
+      background: #111;
+    }
+    .thumbnail.active {
+      border: 2.5px solid #ff00de;
+      box-shadow: 0 0 12px #ff00de, 0 0 18px #00fff7;
+      opacity: 1;
+    }
+    .neon-footer {
+      margin: 10px auto 0 auto;
+      color: #fff;
+      font-size: 0.92rem;
+      text-align: center;
+      text-shadow: 0 0 6px #00fff7, 0 0 10px #ff00de;
+      font-weight: 500;
+      letter-spacing: 1px;
+      z-index: 2;
+    }
+    @media (max-width: 600px) {
+      .main-card { padding: 8px 1vw 8px 1vw; max-width: 99vw; }
+      .slider-photo { width: 96vw; max-width: 99vw; height: 60vw; max-height: 60vw; }
+      .slider-arrow { width: 34px; height: 34px; font-size: 1.6rem; }
+      .neon-title { font-size: 1.18rem; }
+      .neon-message { font-size: 0.98rem; }
+      .music-btn { top: 6px; right: 8px; width: 38px; height: 38px; font-size: 1.2rem; }
+      .neon-footer { font-size: 0.98rem; }
+    }
+    @media (max-width: 400px) {
+      .main-card { padding: 4px 1vw 4px 1vw; }
+      .neon-title { font-size: 1rem; }
+      .neon-message { font-size: 0.9rem; }
+      .slider-photo { width: 98vw; height: 60vw; min-width: 40px; min-height: 40px; }
+      .slider-arrow { width: 38px; height: 38px; font-size: 1.4em; }
+    }
+    @media (max-width: 480px) {
+      .slider-photo-block, .slider-photo {
+        max-width: 98vw;
+      }
+      .slider-photo {
+        height: 180px;
+      }
+      .photo-caption {
+        font-size: 0.95em;
+        padding: 5px 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="neon-bg"></div>
+  <div class="main-card" id="mainCard">
+    <div class="neon-heart" id="heart">
+      <svg viewBox="0 0 100 90"><path d="M10,30 Q10,10 30,10 Q50,10 50,30 Q50,10 70,10 Q90,10 90,30 Q90,60 50,85 Q10,60 10,30 Z" fill="none" stroke="#ff00de" stroke-width="6"/></svg>
+    </div>
+    <div class="neon-title">Зодрӯз муборак, Мавлуда!</div>
+    <div class="neon-message" id="neonMessage">Мавлудаи азиз!<br>Имрӯз ту мисли ситора — зебо, равшан ва нотакрорӣ! Бигзор зиндагият пур аз муҳаббат, ханда ва сюрпризҳои ширин бошад. 22 сола шуданат муборак!</div>
+    <div class="slider-photo-block">
+      <button class="slider-arrow" id="arrowLeft" aria-label="Қафо">&#8592;</button>
+      <img class="slider-photo" id="sliderPhoto" src="" alt="Акс" style="cursor:zoom-in;" />
+      <button class="slider-arrow" id="arrowRight" aria-label="Пеш">&#8594;</button>
+      <div class="photo-caption" id="photoCaption"></div>
+      <div class="thumbnails-row" id="thumbnailsRow"></div>
+    </div>
+  </div>
+  <div class="neon-footer">Бо муҳаббат ва табассум 💖</div>
+  <script>
+    const photos = [
+      {src: 'Photo/1709698863699.jpg', caption: 'Мавлуда — Фионаи ҳақиқӣ!'},
+      {src: 'Photo/1709700253216.jpg', caption: 'Мавлуда аз ҳама шоҳдухтарони мультфилм зеботар аст!'},
+      {src: 'Photo/IMG_20230317_090927_286.jpg', caption: 'Агар мультфилми нав месохтанд, Мавлуда қаҳрамони асосӣ мешуд!'},
+      {src: 'Photo/IMG_20230404_210014_603.jpg', caption: 'Ҳатто Шрек дар назди зебоии Мавлуда таслим шуд!'},
+      {src: 'Photo/IMG_20230405_140748_033.jpg', caption: 'Зебоие, ки ҳатто Шрекро наҷот медиҳад!'},
+      {src: 'Photo/IMG_20230419_143816_411.jpg', caption: 'Мавлуда — қаҳрамон ва шоҳдухтар дар як шахсият!'},
+      {src: 'Photo/IMG_20240227_122800.jpg', caption: 'Мавлуда кадт 50 сантиметр забонт 2 метр'},
+      {src: 'Photo/IMG_20240420_114459.jpg', caption: 'Мавлуда ҳатто аждаҳоро ба ҳайрат меорад!'},
+      {src: 'Photo/IMG_20240420_114538.jpg', caption: 'Мавлуда — ягона қаҳрамонест, ки ба ҳама лозим аст!'},
+      {src: 'Photo/IMG_20240420_122519.jpg', caption: 'Мавлуда — Фионаи ҳақиқӣ, ки Шрекро мафтун кард!'},
+      {src: 'Photo/IMG_20240423_183542.jpg', caption: 'Мавлуда ва Шрек — ду қалб, як афсона!'},
+      {src: 'Photo/IMG_20240911_235152.jpg', caption: 'Ҳатто Хар аз  мултьфилми Шрек мехоҳад бо Мавлуда акс гирад!'},
+      {src: 'Photo/IMG-20240712-WA0019.jpg', caption: 'Мавлуда — Фионаи замони мо!'},
+      {src: 'Photo/IMG-20240712-WA0029.jpg', caption: 'Лабханди Мавлуда — мисли афсонаҳои Шрек, фаромӯшнашаванда!'},
+      {src: 'Photo/IMG-20241228-WA0014.jpg', caption: 'Мавлудае, ки дили Шрекро бурд!'},
+      {src: 'Photo/IMG-20241228-WA0020.jpg', caption: 'Мавлуда ва Шрек ҳамдигарро комилан мефаҳманд!'},
+      {src: 'Photo/IMG-20241228-WA0021.jpg', caption: 'Мавлуда ва Шрек — мисли Фиона ва Шрек, ҳамеша якҷо!'},
+      {src: 'Photo/IMG-20241228-WA0032.jpg', caption: 'Чунин зебоиро ҳатто дар мультфилм намеёбӣ!'},
+      {src: 'Photo/IMG-20250212-WA0017.jpg', caption: 'Муҳаббати Мавлуда  — илҳомбахш барои ҳама!'},
+      {src: 'Photo/Snapchat-262580908.jpg', caption: 'Snapchat низ аз чунин зебоӣ ҳайрон аст!'},
+      {src: 'Photo/Snapchat-757811065.jpg', caption: 'Мавлуда — беҳтарин, ва ин ҳақиқат аст!'}
+    ];
+    let currentPhoto = 0;
+    const sliderPhoto = document.getElementById('sliderPhoto');
+    const photoCaption = document.getElementById('photoCaption');
+    function showPhoto(idx) {
+      sliderPhoto.src = photos[idx].src;
+      photoCaption.textContent = photos[idx].caption;
+      // Обновить активную миниатюру
+      document.querySelectorAll('.thumbnail').forEach((el, i) => {
+        if (i === idx) el.classList.add('active');
+        else el.classList.remove('active');
+      });
+    }
+    // Стрелки
+    document.getElementById('arrowLeft').onclick = () => {
+      currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
+      showPhoto(currentPhoto);
+    };
+    document.getElementById('arrowRight').onclick = () => {
+      currentPhoto = (currentPhoto + 1) % photos.length;
+      showPhoto(currentPhoto);
+    };
+    // Миниатюры
+    const thumbnailsRow = document.getElementById('thumbnailsRow');
+    photos.forEach((photo, idx) => {
+      const thumb = document.createElement('img');
+      thumb.src = photo.src;
+      thumb.className = 'thumbnail' + (idx === currentPhoto ? ' active' : '');
+      thumb.alt = 'thumb';
+      thumb.onclick = () => {
+        currentPhoto = idx;
+        showPhoto(currentPhoto);
+      };
+      thumbnailsRow.appendChild(thumb);
+    });
+    showPhoto(currentPhoto);
+  </script>
+</body>
+</html> 
