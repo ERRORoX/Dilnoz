@@ -1,74 +1,29 @@
 <!DOCTYPE html>
-
-
-<html lang="tg">
-
+<html lang="ru">
 <head>
-
-
-<meta charset="UTF-8" />
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-
-
-<title>🎂 Зодрӯз муборак, Дилноза! 🐻</title>
-
-
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
-
-
-<style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <title>🎂 Зодрӯз муборак, Дилноза! 🐻</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
 
 
   * {
-
-
     box-sizing: border-box;
-
-
     margin: 0;
-
-
     padding: 0;
-
-
   }
 
-
-
-
-
   body {
-
-
     background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
-
-
     font-family: 'Exo 2', sans-serif;
-
-
     color: #ffffff;
-
-
     overflow-x: hidden;
-
-
     min-height: 100vh;
-
-
     user-select: none;
-
-
     -webkit-tap-highlight-color: transparent;
-
-
     touch-action: manipulation;
-
-
     position: relative;
-
-
   }
 
 
@@ -76,26 +31,12 @@
 
 
   /* Неоновый фон */
-
-
   .neon-bg {
-
-
     position: fixed;
-
-
     top: 0;
-
-
     left: 0;
-
-
     width: 100%;
-
-
     height: 100%;
-
-
     z-index: 0;
 
 
@@ -657,18 +598,13 @@
 
 
 
-  .cyber-age:hover {
-
-
+  .cyber-age:hover,
+  .cyber-age:focus {
     transform: scale(1.1);
-
-
     color: #ff00ff;
-
-
     text-shadow: 0 0 40px #ff00ff;
-
-
+    outline: 2px solid #00ffff;
+    outline-offset: 5px;
   }
 
 
@@ -886,32 +822,23 @@
 
 
   .cyber-heart-lock {
-
-
     position: fixed;
-
-
     bottom: 120px;
-
-
     right: 30px;
-
-
     width: 100px;
-
-
     height: 100px;
-
-
     cursor: pointer;
-
-
     z-index: 50;
-
-
     filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.6));
+    transition: all 0.3s ease;
+  }
 
-
+  .cyber-heart-lock:hover,
+  .cyber-heart-lock:focus {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 30px rgba(255, 105, 180, 0.8));
+    outline: 2px solid #ff69b4;
+    outline-offset: 5px;
   }
 
 
@@ -1018,38 +945,25 @@
 
 
   .cyber-speaking-teddy {
-
-
     position: fixed;
-
-
     bottom: 30px;
-
-
     left: 30px;
-
-
     width: 80px;
-
-
     height: 80px;
-
-
     font-size: 3rem;
-
-
     cursor: pointer;
-
-
     animation: cyberTeddyTalk 4s ease-in-out infinite;
-
-
     z-index: 50;
-
-
     filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+    transition: all 0.3s ease;
+  }
 
-
+  .cyber-speaking-teddy:hover,
+  .cyber-speaking-teddy:focus {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.8));
+    outline: 2px solid #00ffff;
+    outline-offset: 5px;
   }
 
 
@@ -2394,7 +2308,7 @@
     <h1 class="cyber-title">Зодрӯз муборак, Дилноза!</h1>
 
 
-    <div class="cyber-age" id="cyberAge">21 🎂</div>
+    <div class="cyber-age" id="cyberAge" role="button" tabindex="0" aria-label="Возраст Дилнозы - нажмите для сюрприза">21 🎂</div>
 
 
     <p class="cyber-message">
@@ -2412,7 +2326,7 @@
     </p>
 
 
-    <button class="cyber-button" id="cyberSurpriseBtn">Бигзор дилат шод шавад! 🐻</button>
+    <button class="cyber-button" id="cyberSurpriseBtn" aria-label="Нажмите для сюрприза">Бигзор дилат шод шавад! 🐻</button>
 
   </div>
 
@@ -2471,7 +2385,7 @@
 <!-- Сердце с ключом -->
 
 
-<div class="cyber-heart-lock" id="cyberHeartLock">
+<div class="cyber-heart-lock" id="cyberHeartLock" role="button" tabindex="0" aria-label="Сердце с ключом - нажмите для анимации">
 
 
   <div class="cyber-key">🔑</div>
@@ -2486,7 +2400,7 @@
 <!-- Говорящий мишка -->
 
 
-<div class="cyber-speaking-teddy" id="cyberSpeakingTeddy">🐻</div>
+<div class="cyber-speaking-teddy" id="cyberSpeakingTeddy" role="button" tabindex="0" aria-label="Говорящий мишка - нажмите для сообщения">🐻</div>
 
 
 <div class="cyber-speech-bubble" id="cyberSpeechBubble">Зодрӯзат муборак, Дилноза! 🎂</div>
@@ -2505,191 +2419,90 @@
 
 
 <script>
-
-
   // Счетчик посещений
-
-
   let visits = localStorage.getItem('cyberBirthdayVisits') || 0;
-
-
   visits = parseInt(visits) + 1;
-
-
   localStorage.setItem('cyberBirthdayVisits', visits);
-
-
   document.getElementById('cyberCounter').textContent = `Боздидҳо: ${visits}`;
 
-
-
-
-
   // Аудио контекст
-
-
   let soundEnabled = true;
-
-
-  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  let audioContext;
+  
+  try {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+  } catch (e) {
+    console.log('Audio context not supported');
+    soundEnabled = false;
+  }
 
 
 
 
 
   function playSound(frequency, duration) {
-
-
-    if (!soundEnabled) return;
-
+    if (!soundEnabled || !audioContext) return;
 
     try {
-
-
       const oscillator = audioContext.createOscillator();
-
-
       const gainNode = audioContext.createGain();
-
-
+      
       oscillator.connect(gainNode);
-
-
       gainNode.connect(audioContext.destination);
-
-
+      
       oscillator.frequency.value = frequency;
-
-
       oscillator.type = 'sine';
-
-
+      
       gainNode.gain.setValueAtTime(0.03, audioContext.currentTime);
-
-
       gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
-
-
+      
       oscillator.start(audioContext.currentTime);
-
-
       oscillator.stop(audioContext.currentTime + duration);
-
-
     } catch (e) {
-
-
       console.log('Audio not supported');
-
-
     }
-
-
   }
-
-
-
-
 
   // Приятная мелодия - ЗАМЕНЯЮ НА HAPPY BIRTHDAY
-
-
   function playHappyBirthday() {
-
-
+    if (!audioContext) return;
+    
     // Настоящая мелодия Happy Birthday
-
-
     const notes = [261, 261, 293, 261, 349, 329, 261, 261, 293, 261, 392, 349, 261, 261, 523, 440, 349, 329, 293, 466, 466, 440, 349, 392, 349];
-
-
     const durations = [0.5, 0.5, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 2];
-
-
+    
     let currentTime = audioContext.currentTime;
-
-
+    
     notes.forEach((note, index) => {
-
-
       setTimeout(() => {
-
-
         playSound(note, durations[index]);
-
-
       }, currentTime * 1000 + index * 600);
-
-
     });
-
-
   }
 
-
-
-
-
   // Анимация мишки
-
-
   const teddyBear = document.getElementById('teddyBear');
-
-
   const teddyCake = document.getElementById('teddyCake');
 
 
   let animLock = false;
 
-
-
-
-
   function teddyOpenHeartAndCake() {
-
-
     if (animLock) return;
-
-
     animLock = true;
 
-
-
-
-
     teddyCake.classList.add('show');
-
-
     playHappyBirthday();
 
-
-
-
-
     setTimeout(() => {
-
-
       teddyCake.classList.remove('show');
-
-
       teddyBear.style.filter = 'drop-shadow(0 0 30px rgba(0, 255, 255, 1))';
-
-
+      
       setTimeout(() => {
-
-
         teddyBear.style.filter = 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))';
-
-
         animLock = false;
-
-
       }, 800);
-
-
     }, 2000);
-
-
   }
 
 
@@ -2697,77 +2510,31 @@
 
 
   // Эффекты
-
-
   function createConfetti() {
-
-
     return; // Функция отключена - больше никаких круглых частиц!
-
-
   }
 
-
-
-
-
   function createHeart(x, y) {
-
-
     const heart = document.createElement('div');
-
-
     heart.className = 'cyber-heart-particle';
-
-
     heart.textContent = '💖';
-
-
     heart.style.left = x + 'px';
-
-
     heart.style.top = y + 'px';
-
-
     document.body.appendChild(heart);
 
 
     setTimeout(() => heart.remove(), 5000);
-
-
   }
 
-
-
-
-
   function createSparkle(x, y) {
-
-
     const sparkles = ['✨', '⭐', '🌟', '💫', '⚡', '🎆', '🎇', '🔮', '🌈'];
-
-
     const sparkle = document.createElement('div');
-
-
     sparkle.className = 'cyber-sparkle';
-
-
     sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
-
-
     sparkle.style.left = x + 'px';
-
-
     sparkle.style.top = y + 'px';
-
-
     document.body.appendChild(sparkle);
-
-
     setTimeout(() => sparkle.remove(), 3000);
-
-
   }
 
 
@@ -2775,55 +2542,21 @@
 
 
   // Говорящий мишка
-
-
   const speakingTeddy = document.getElementById('cyberSpeakingTeddy');
-
-
   const speechBubble = document.getElementById('cyberSpeechBubble');
 
-
-
-
-
   const messages = [
-
-
     "Зодрӯзат муборак, Дилноза! 🎂",
-
-
     "Ту хеле зебо ҳастӣ! 💖",
-
-
     "Имрӯз рӯзи ту аст! 🎉",
-
-
     "Бигзор хушбахт боши! ✨",
-
-
     "Ту махсуси! 🌟",
-
-
     "Хуш омади! 🎈",
-
-
     "Зодрӯзат муборак, Дилноза! 🎂",
-
-
     "Ту зеботарин ҳастӣ! 💕",
-
-
     "Ту пир шуди шу намекни дига! ✨",
-
-
     "Ту магистри ҳама чиз ҳастӣ! 🔮"
-
-
   ];
-
-
-
-
 
   let currentMessageIndex = 0;
 
@@ -2835,47 +2568,19 @@
 
 
   function speakTeddy() {
-
-
     if (isSpeaking) return;
-
-
     isSpeaking = true;
 
-
-
-
-
     const message = messages[currentMessageIndex];
-
-
     speechBubble.textContent = message;
-
-
     speechBubble.classList.add('show');
-
-
-
-
 
     currentMessageIndex = (currentMessageIndex + 1) % messages.length;
 
-
-
-
-
     setTimeout(() => {
-
-
       speechBubble.classList.remove('show');
-
-
       isSpeaking = false;
-
-
     }, 3000);
-
-
   }
 
 
@@ -2883,62 +2588,27 @@
 
 
   // События
-
-
   const teddyContainer = document.getElementById('teddyContainer');
 
-
   teddyContainer.addEventListener('click', (e) => {
-
-
     teddyOpenHeartAndCake();
-
-
     speakTeddy();
-
-
   });
-
 
   teddyContainer.addEventListener('touchstart', (e) => {
-
-
     e.preventDefault();
-
-
     teddyOpenHeartAndCake();
-
-
     speakTeddy();
-
-
   });
 
-
-
-
-
   // Возраст
-
-
   let clickCount = 0;
 
-
   document.getElementById('cyberAge').addEventListener('click', (e) => {
-
-
     clickCount++;
 
-
-
-
-
     playSound(600 + clickCount * 30, 0.2);
-
-
     createHeart(e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY);
-
-
     createSparkle(e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY);
 
 
@@ -2946,59 +2616,23 @@
 
 
     if (clickCount >= 5) {
-
-
       document.getElementById('cyberAge').textContent = '21 🎂 🐻';
-
-
       speakTeddy();
-
-
     }
-
-
-
-
 
     if (clickCount >= 10) {
-
-
       document.getElementById('cyberAge').textContent = '21 🎂 🐻 👑';
-
-
       speakTeddy();
-
-
     }
-
-
-
-
 
     if (clickCount >= 15) {
-
-
       document.getElementById('cyberAge').textContent = '21 🎂 🐻 👑 💎';
-
-
       speakTeddy();
-
-
     }
 
-
-
-
-
     if (clickCount >= 21) {
-
-
       document.getElementById('cyberAge').textContent = '21 🎂 🐻 👑 💎 ✨';
-
-
       speakTeddy();
-
-
     }
 
 
@@ -3009,53 +2643,56 @@
 
 
   // Сердце с ключом
-
-
   document.getElementById('cyberHeartLock').addEventListener('click', (e) => {
-
-
     playSound(1000, 0.3);
-
-
     speakTeddy();
 
-
-
-
-
     const heartLock = document.getElementById('cyberHeartLock');
-
-
     heartLock.style.transform = 'scale(1.3) rotate(360deg)';
-
-
+    
     setTimeout(() => {
-
-
       heartLock.style.transform = 'scale(1) rotate(0deg)';
-
-
     }, 500);
-
-
   });
 
 
+  // Поддержка касаний для мобильных устройств
+  document.getElementById('cyberAge').addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    document.getElementById('cyberAge').click();
+  });
 
+  document.getElementById('cyberHeartLock').addEventListener('touchstart', (e) => {
+    e.preventDefault();
+    document.getElementById('cyberHeartLock').click();
+  });
 
+  // Поддержка клавиатуры
+  document.getElementById('cyberAge').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.getElementById('cyberAge').click();
+    }
+  });
+
+  document.getElementById('cyberHeartLock').addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      document.getElementById('cyberHeartLock').click();
+    }
+  });
+
+  speakingTeddy.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      speakingTeddy.click();
+    }
+  });
 
   // Кнопка сюрприза
-
-
   document.getElementById('cyberSurpriseBtn').addEventListener('click', () => {
-
-
     playSound(1000, 0.2);
-
-
     speakTeddy();
-
-
   });
 
 
@@ -3063,132 +2700,46 @@
 
 
   // Говорящий мишка
-
-
   speakingTeddy.addEventListener('click', () => {
-
-
     speakTeddy();
-
-
     playSound(600, 0.2);
-
-
   });
-
-
-
-
 
   // Инициализация
-
-
   setTimeout(() => {
-
-
-    playSound(800, 0.2);
-
-
+    if (audioContext) {
+      playSound(800, 0.2);
+    }
     speakTeddy();
-
-
-    playLongMusic();
-
-
+    if (audioContext) {
+      playLongMusic();
+    }
   }, 1000);
 
-
-
-
-
   // Длинная музыка - НОВАЯ ВЕСЕЛАЯ МЕЛОДИЯ
-
-
   function playLongMusic() {
-
-
+    if (!audioContext) return;
+    
     // Веселая мелодия с разными инструментами
-
-
     const notes = [523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 1047, 880, 784, 659, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 1047, 880, 784, 659, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880];
-
-
     const durations = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3];
-
-
+    
     let currentTime = audioContext.currentTime;
-
-
+    
     notes.forEach((note, index) => {
-
-
       setTimeout(() => {
-
-
         playSound(note, durations[index]);
-
-
       }, currentTime * 1000 + index * 400);
-
     });
-
-
   }
 
-
-
-
-
-  // Поддержка касаний
-
-
-  document.getElementById('cyberAge').addEventListener('touchstart', (e) => {
-
-
-    e.preventDefault();
-
-
-    document.getElementById('cyberAge').click();
-
-
-  });
-
-
-
-
-
-  document.getElementById('cyberHeartLock').addEventListener('touchstart', (e) => {
-
-
-    e.preventDefault();
-
-
-    document.getElementById('cyberHeartLock').click();
-
-
-  });
-
-
-
-
-
+  // Поддержка касаний для мобильных устройств
   speakingTeddy.addEventListener('touchstart', (e) => {
-
-
     e.preventDefault();
-
-
     speakingTeddy.click();
-
-
   });
 
 
 </script>
-
-
-
-
 </body>
-
 </html>
