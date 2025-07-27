@@ -1,288 +1,3194 @@
 <!DOCTYPE html>
+
+
 <html lang="tg">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Зодрӯз муборак, Мавлуда!</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-    html, body {
-      margin: 0; padding: 0;
-      min-height: 100vh;
-      width: 100vw;
-      overflow-x: hidden;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: #18182a;
-    }
+
+
+<meta charset="UTF-8" />
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+
+<title>🎂 Зодрӯз муборак, Дилноза! 🐻</title>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+
+<style>
+
+
+  * {
+
+
+    box-sizing: border-box;
+
+
+    margin: 0;
+
+
+    padding: 0;
+
+
+  }
+
+
+
+
+
+  body {
+
+
+    background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+
+
+    font-family: 'Exo 2', sans-serif;
+
+
+    color: #ffffff;
+
+
+    overflow-x: hidden;
+
+
+    min-height: 100vh;
+
+
+    user-select: none;
+
+
+    -webkit-tap-highlight-color: transparent;
+
+
+    touch-action: manipulation;
+
+
+    position: relative;
+
+
+  }
+
+
+
+
+
+  /* Неоновый фон */
+
+
+  .neon-bg {
+
+
+    position: fixed;
+
+
+    top: 0;
+
+
+    left: 0;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    z-index: 0;
+
+
+    background:
+
+
+      radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+
+
+      radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+
+
+      radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.2) 0%, transparent 50%);
+
+
+    animation: neonPulse 8s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  @keyframes neonPulse {
+
+
+    0%, 100% { opacity: 0.5; }
+
+
+    50% { opacity: 1; }
+
+
+  }
+
+
+
+
+
+  .main-container {
+
+
+    display: flex;
+
+
+    flex-direction: column;
+
+
+    align-items: center;
+
+
+    justify-content: center;
+
+
+    min-height: 100vh;
+
+
+    padding: 20px;
+
+
+    position: relative;
+
+
+    z-index: 10;
+
+
+  }
+
+
+
+
+
+  /* Стеклянная карта */
+
+
+  .neon-card {
+
+
+    background: rgba(255, 255, 255, 0.1);
+
+
+    backdrop-filter: blur(20px);
+
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+
+    border-radius: 30px;
+
+
+    padding: 40px 30px;
+
+
+    max-width: 450px;
+
+
+    width: 100%;
+
+
+    text-align: center;
+
+
+    box-shadow:
+
+
+      0 25px 45px rgba(0, 0, 0, 0.3),
+
+
+      0 0 30px rgba(0, 255, 255, 0.1),
+
+
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+
+    position: relative;
+
+
+    overflow: hidden;
+
+
+    animation: cardGlow 4s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  .neon-card::before {
+
+
+    content: '';
+
+
+    position: absolute;
+
+
+    top: 0;
+
+
+    left: -100%;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+
+
+    animation: neonSweep 3s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  @keyframes cardGlow {
+
+
+    0%, 100% { box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 255, 255, 0.1); }
+
+
+    50% { box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 255, 255, 0.3); }
+
+
+  }
+
+
+
+
+
+  @keyframes neonSweep {
+
+
+    0% { left: -100%; }
+
+
+    50% { left: 100%; }
+
+
+    100% { left: 100%; }
+
+
+  }
+
+
+
+
+
+  /* Мишка с сердцем */
+
+
+  .teddy-container {
+
+
+    position: relative;
+
+
+    width: 180px;
+
+
+    height: 180px;
+
+
+    margin: 0 auto 30px;
+
+
+    perspective: 1000px;
+
+
+    cursor: pointer;
+
+
+  }
+
+
+
+
+
+  .teddy {
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    position: relative;
+
+
+    transform-style: preserve-3d;
+
+
+    animation: teddyFloat 8s ease-in-out infinite, teddyGlow 3s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  @keyframes teddyFloat {
+
+
+    0%, 100% { transform: translateY(0px) rotateY(0deg) scale(1); }
+
+
+    12.5% { transform: translateY(-6px) rotateY(2deg) scale(1.02); }
+
+
+    25% { transform: translateY(-10px) rotateY(4deg) scale(1.05); }
+
+
+    37.5% { transform: translateY(-8px) rotateY(1deg) scale(1.03); }
+
+
+    50% { transform: translateY(-4px) rotateY(-2deg) scale(1.01); }
+
+
+    62.5% { transform: translateY(-12px) rotateY(-4deg) scale(1.04); }
+
+
+    75% { transform: translateY(-6px) rotateY(-1deg) scale(1.02); }
+
+
+    87.5% { transform: translateY(-14px) rotateY(3deg) scale(1.06); }
+
+
+  }
+
+
+
+
+
+  .teddy-bear {
+
+
+    position: absolute;
+
+
+    top: 0; left: 0;
+
+
+    width: 100%; height: 100%;
+
+
+    z-index: 3;
+
+
+    display: flex;
+
+
+    align-items: center;
+
+
+    justify-content: center;
+
+
+    font-size: 100px;
+
+
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5));
+
+
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+
+    animation: teddyFloat 8s ease-in-out infinite, teddyGlow 3s ease-in-out infinite, teddyPulse 2s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  @keyframes teddyGlow {
+
+
+    0%, 100% { filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.5)); }
+
+
+    50% { filter: drop-shadow(0 0 30px rgba(0, 255, 255, 0.8)) drop-shadow(0 0 40px rgba(255, 105, 180, 0.3)); }
+
+
+  }
+
+
+
+
+
+  @keyframes teddyPulse {
+
+
+    0%, 100% { transform: scale(1); }
+
+
+    50% { transform: scale(1.05); }
+
+
+  }
+
+
+
+
+
+  @keyframes teddyHappy {
+
+
+    0%, 100% { transform: scale(1) rotate(0deg); }
+
+
+    25% { transform: scale(1.1) rotate(-5deg); }
+
+
+    75% { transform: scale(1.1) rotate(5deg); }
+
+
+  }
+
+
+
+
+
+  .teddy-bear:hover {
+
+
+    animation: teddyHappy 0.5s ease-in-out;
+
+
+  }
+
+
+
+
+
+  .teddy-cake {
+
+
+    position: absolute;
+
+
+    left: 50%;
+
+
+    bottom: 50px;
+
+
+    transform: translateX(-50%) scale(0) rotateY(0deg);
+
+
+    font-size: 50px;
+
+
+    opacity: 0;
+
+
+    z-index: 4;
+
+
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+
+
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+
+  }
+
+
+
+
+
+  .teddy-cake.show {
+
+
+    transform: translateX(-50%) scale(1.4) translateY(-80px) rotateY(360deg);
+
+
+    opacity: 1;
+
+
+  }
+
+
+
+
+
+  /* Неоновый заголовок */
+
+
+  .cyber-title {
+
+
+    font-family: 'Orbitron', monospace;
+
+
+    font-size: 2.8rem;
+
+
+    font-weight: 900;
+
+
+    margin: 25px 0;
+
+
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+
+
+    background-size: 400% 400%;
+
+
+    -webkit-background-clip: text;
+
+
+    background-clip: text;
+
+
+    color: transparent;
+
+
+    animation: neonText 3s ease-in-out infinite;
+
+
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+
+
+    position: relative;
+
+
+    z-index: 2;
+
+
+  }
+
+
+
+
+
+  @keyframes neonText {
+
+
+    0%, 100% { background-position: 0% 50%; }
+
+
+    50% { background-position: 100% 50%; }
+
+
+  }
+
+
+
+
+
+  /* Возраст */
+
+
+  .cyber-age {
+
+
+    font-family: 'Orbitron', monospace;
+
+
+    font-size: 4rem;
+
+
+    font-weight: 700;
+
+
+    margin: 25px 0;
+
+
+    color: #00ffff;
+
+
+    cursor: pointer;
+
+
+    transition: all 0.3s ease;
+
+
+    position: relative;
+
+
+    z-index: 2;
+
+
+    text-shadow: 0 0 30px #00ffff;
+
+
+    animation: agePulse 2s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  @keyframes agePulse {
+
+
+    0%, 100% { text-shadow: 0 0 30px #00ffff; }
+
+
+    50% { text-shadow: 0 0 50px #00ffff, 0 0 70px #00ffff; }
+
+
+  }
+
+
+
+
+
+  .cyber-age:hover {
+
+
+    transform: scale(1.1);
+
+
+    color: #ff00ff;
+
+
+    text-shadow: 0 0 40px #ff00ff;
+
+
+  }
+
+
+
+
+
+  /* Сообщение */
+
+
+  .cyber-message {
+
+
+    font-size: 1.3rem;
+
+
+    line-height: 1.8;
+
+
+    margin: 30px 0;
+
+
+    color: #ffffff;
+
+
+    position: relative;
+
+
+    z-index: 2;
+
+
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+
+
+  }
+
+
+
+
+
+  /* Кнопка */
+
+
+  .cyber-button {
+
+
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+
+
+    color: #000;
+
+
+    border: none;
+
+
+    padding: 18px 45px;
+
+
+    border-radius: 50px;
+
+
+    font-size: 1.3rem;
+
+
+    font-weight: 700;
+
+
+    font-family: 'Orbitron', monospace;
+
+
+    cursor: pointer;
+
+
+    transition: all 0.3s ease;
+
+
+    position: relative;
+
+
+    z-index: 2;
+
+
+    text-transform: uppercase;
+
+
+    letter-spacing: 2px;
+
+
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+
+
+    overflow: hidden;
+
+
+  }
+
+
+
+
+
+  .cyber-button::before {
+
+
+    content: '';
+
+
+    position: absolute;
+
+
+    top: 0;
+
+
+    left: -100%;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+
+
+    transition: left 0.5s;
+
+
+  }
+
+
+
+
+
+  .cyber-button:hover::before {
+
+
+    left: 100%;
+
+
+  }
+
+
+
+
+
+  .cyber-button:hover {
+
+
+    transform: translateY(-3px) scale(1.05);
+
+
+    box-shadow: 0 0 50px rgba(0, 255, 255, 0.8);
+
+
+  }
+
+
+
+
+
+  /* Счетчик посещений */
+
+
+  .cyber-counter {
+
+
+    position: fixed;
+
+
+    top: 30px;
+
+
+    left: 30px;
+
+
+    background: rgba(0, 0, 0, 0.8);
+
+
+    backdrop-filter: blur(10px);
+
+
+    padding: 15px 25px;
+
+
+    border-radius: 25px;
+
+
+    font-size: 1rem;
+
+
+    font-weight: 600;
+
+
+    color: #00ffff;
+
+
+    border: 1px solid rgba(0, 255, 255, 0.3);
+
+
+    z-index: 100;
+
+
+    font-family: 'Orbitron', monospace;
+
+
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+
+
+  }
+
+
+
+
+
+  /* Сердце с ключом */
+
+
+  .cyber-heart-lock {
+
+
+    position: fixed;
+
+
+    bottom: 120px;
+
+
+    right: 30px;
+
+
+    width: 100px;
+
+
+    height: 100px;
+
+
+    cursor: pointer;
+
+
+    z-index: 50;
+
+
+    filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.6));
+
+
+  }
+
+
+
+
+
+  .cyber-heart-lock::before {
+
+
+    content: '💖';
+
+
+    font-size: 80px;
+
+
+    display: block;
+
+
+    position: absolute;
+
+
+    top: 0;
+
+
+    left: 0;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    animation: cyberHeartBeat 2s ease-in-out infinite;
+
+
+  }
+
+
+
+
+
+  .cyber-key {
+
+
+    position: absolute;
+
+
+    top: -15px;
+
+
+    right: -15px;
+
+
+    font-size: 35px;
+
+
+    animation: cyberKeyGlow 2s ease-in-out infinite;
+
+
+    z-index: 2;
+
+
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+
+
+  }
+
+
+
+
+
+  @keyframes cyberHeartBeat {
+
+
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 20px rgba(255, 105, 180, 0.6)); }
+
+
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 30px rgba(255, 105, 180, 1)); }
+
+
+  }
+
+
+
+
+
+  @keyframes cyberKeyGlow {
+
+
+    0%, 100% { opacity: 0.8; transform: scale(1); }
+
+
+    50% { opacity: 1; transform: scale(1.2); }
+
+
+  }
+
+
+
+
+
+  /* Говорящий мишка */
+
+
+  .cyber-speaking-teddy {
+
+
+    position: fixed;
+
+
+    bottom: 30px;
+
+
+    left: 30px;
+
+
+    width: 80px;
+
+
+    height: 80px;
+
+
+    font-size: 3rem;
+
+
+    cursor: pointer;
+
+
+    animation: cyberTeddyTalk 4s ease-in-out infinite;
+
+
+    z-index: 50;
+
+
+    filter: drop-shadow(0 0 20px rgba(0, 255, 255, 0.6));
+
+
+  }
+
+
+
+
+
+  @keyframes cyberTeddyTalk {
+
+
+    0%, 100% { transform: scale(1); }
+
+
+    50% { transform: scale(1.15); }
+
+
+  }
+
+
+
+
+
+  /* Речевой пузырь */
+
+
+  .cyber-speech-bubble {
+
+
+    position: fixed;
+
+
+    bottom: 120px;
+
+
+    left: 30px;
+
+
+    background: rgba(0, 0, 0, 0.9);
+
+
+    backdrop-filter: blur(15px);
+
+
+    padding: 20px 25px;
+
+
+    border-radius: 25px;
+
+
+    max-width: 280px;
+
+
+    font-size: 1.1rem;
+
+
+    border: 1px solid rgba(0, 255, 255, 0.3);
+
+
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+
+
+    opacity: 0;
+
+
+    transform: translateY(20px);
+
+
+    transition: all 0.4s ease;
+
+
+    z-index: 50;
+
+
+    color: #00ffff;
+
+
+    font-family: 'Exo 2', sans-serif;
+
+
+  }
+
+
+
+
+
+  .cyber-speech-bubble.show {
+
+
+    opacity: 1;
+
+
+    transform: translateY(0);
+
+
+  }
+
+
+
+
+
+  .cyber-speech-bubble::after {
+
+
+    content: '';
+
+
+    position: absolute;
+
+
+    bottom: -10px;
+
+
+    left: 40px;
+
+
+    width: 0;
+
+
+    height: 0;
+
+
+    border-left: 12px solid transparent;
+
+
+    border-right: 12px solid transparent;
+
+
+    border-top: 12px solid rgba(0, 0, 0, 0.9);
+
+
+  }
+
+
+
+
+
+  /* Эффекты - УДАЛЯЮ КРУГЛЫЕ КРАСКИ */
+
+
+  * .cyber-confetti {
+
+
+    position: fixed;
+
+
+    width: 8px;
+
+
+    height: 8px;
+
+
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+
+
+    animation: cyberConfettiFall 4s linear forwards;
+
+
+    z-index: 20;
+
+
+    border-radius: 2px;
+
+
+  }
+
+
+
+
+
+  @keyframes cyberConfettiFall {
+
+
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+
+
+    100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+
+
+  } */
+
+
+
+
+
+  .cyber-heart-particle {
+
+
+    position: fixed;
+
+
+    font-size: 1.8rem;
+
+
+    animation: cyberHeartFloat 5s ease-out forwards;
+
+
+    z-index: 15;
+
+
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.8));
+
+
+  }
+
+
+
+
+
+  @keyframes cyberHeartFloat {
+
+
+    0% { transform: translateY(0) scale(0.5); opacity: 1; }
+
+
+    100% { transform: translateY(-120px) scale(1.3); opacity: 0; }
+
+
+  }
+
+
+
+
+
+  .cyber-sparkle {
+
+
+    position: fixed;
+
+
+    font-size: 2.5rem;
+
+
+    animation: cyberSparkle 3s ease-out forwards;
+
+
+    z-index: 25;
+
+
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+
+
+  }
+
+
+
+
+
+  @keyframes cyberSparkle {
+
+
+    0% { transform: scale(0) rotate(0deg); opacity: 1; }
+
+
+    50% { transform: scale(1.8) rotate(180deg); opacity: 1; }
+
+
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+
+
+  }
+
+
+
+
+
+  /* Адаптивность для мобильных */
+
+
+  @media (max-width: 768px) {
+
+
+    .cyber-title { font-size: 2.2rem; }
+
+
+    .cyber-age { font-size: 3.2rem; }
+
+
+    .teddy-container { width: 150px; height: 150px; }
+
+
+    .teddy-bear { font-size: 80px; }
+
+
+    .teddy-heart { font-size: 60px; }
+
+
+    .cyber-speaking-teddy { width: 70px; height: 70px; font-size: 2.5rem; }
+
+
+    .cyber-speech-bubble { max-width: 240px; font-size: 1rem; }
+
+
+    .cyber-heart-lock { width: 80px; height: 80px; }
+
+
+    .cyber-heart-lock::before { font-size: 60px; }
+
+
+    .cyber-key { font-size: 30px; }
+
+
+  }
+
+
+
+
+
+  @media (max-width: 600px) {
+
+
     body {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-      min-height: 100vh;
-    }
-    .neon-bg {
-      position: fixed;
-      z-index: 0;
-      top: 0; left: 0; width: 100vw; height: 100vh;
-      pointer-events: none;
-      background: radial-gradient(circle at 80% 20%, #ff00de55 0%, #18182a 60%),
-                  radial-gradient(circle at 20% 80%, #00fff755 0%, #18182a 60%);
-      animation: bgmove 8s linear infinite alternate;
-    }
-    @keyframes bgmove {
-      0% { filter: blur(0px) brightness(1); }
-      100% { filter: blur(2px) brightness(1.08); }
-    }
-    .main-card {
-      z-index: 2;
-      margin-top: 18px;
-      background: rgba(24,24,42,0.92);
-      border-radius: 14px;
-      box-shadow: 0 0 18px #00fff7, 0 0 22px #ff00de;
-      padding: 10px 2vw 10px 2vw;
-      max-width: 340px;
-      width: 99vw;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .neon-heart {
-      width: 38px; height: 34px;
-      margin-bottom: 8px;
-      position: relative;
-      filter: drop-shadow(0 0 12px #ff00de) drop-shadow(0 0 18px #00fff7);
-      animation: pulse 1.5s infinite;
-    }
-    .neon-heart svg { width: 100%; height: 100%; display: block; }
-    @keyframes pulse {
-      0%,100% { transform: scale(1); }
-      50% { transform: scale(1.08); }
-    }
-    .neon-title {
-      color: #fff;
-      font-size: 1.25rem;
-      text-align: center;
-      text-shadow: 0 0 10px #00fff7, 0 0 20px #ff00de;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 10px;
-    }
-    .neon-message {
-      color: #fff;
-      font-size: 0.98rem;
-      text-align: center;
-      margin-bottom: 14px;
-      text-shadow: 0 0 6px #00fff7;
-    }
-    .slider-photo-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100vw;
-      max-width: 320px;
-      position: relative;
-    }
-    .slider-photo {
-      width: 90vw;
-      max-width: 320px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 18px;
-      box-shadow: 0 0 24px #0ff, 0 0 48px #00f7, 0 8px 24px #000a;
-      border: 3px solid #0ff;
-      outline: 2px solid #fff3;
-      outline-offset: 2px;
-      background: #111;
-      transition: box-shadow 0.3s, border 0.3s, transform 0.3s;
-      filter: brightness(1.08) saturate(1.2);
-      margin-bottom: 10px;
-    }
-    .photo-caption {
-      color: #0ff;
-      font-size: 0.85em;
-      text-align: center;
-      text-shadow: 0 0 8px #00f, 0 0 16px #fff;
-      background: rgba(0,0,32,0.45);
-      border-radius: 12px;
-      padding: 4px 4px;
-      max-width: 98%;
-      box-shadow: 0 0 8px #0ff3;
-      font-family: 'Montserrat', Arial, sans-serif;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 2px;
-    }
-    .slider-arrow {
-      background: linear-gradient(90deg,#0ff,#00f);
-      color: #fff;
-      border: none;
-      border-radius: 50%;
-      font-size: 1.1em;
-      width: 32px;
-      height: 32px;
-      cursor: pointer;
-      box-shadow: 0 0 12px #0ff, 0 0 24px #00f7;
-      transition: background 0.2s;
-      user-select: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      opacity: 0.92;
-      z-index: 2;
+
+
       padding: 0;
+
+
+      font-size: 16px;
+
+      overflow-x: hidden;
+
+
+
     }
-    #arrowLeft { left: 4px; }
-    #arrowRight { right: 4px; }
-    .slider-photo-block { padding: 0 48px; }
-    .thumbnails-row {
-      display: flex;
-      flex-direction: row;
-      gap: 7px;
-      margin: 10px 0 0 0;
-      overflow-x: auto;
+
+
+    .main-container {
+
+
+      padding: 15px 10px 20px 10px;
+
+
+      min-height: 100vh;
+
+
+      justify-content: flex-start;
+
+      align-items: center;
+
+
+
+    }
+
+
+    .neon-card {
+
+
+      max-width: 95vw;
+
+
+      width: 95vw;
+
+
+      padding: 25px 15px 30px 15px;
+
+
+      border-radius: 20px;
+
+
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25), 0 0 18px rgba(0, 255, 255, 0.3);
+
+
+      margin: 0 auto;
+
+
+    }
+
+
+    .teddy-container {
+
+
+      width: 120px;
+
+
+      height: 120px;
+
+
+      margin-bottom: 20px;
+
+
+    }
+
+
+    .teddy-bear {
+
+
+      font-size: 70px;
+
+
+    }
+
+
+    .teddy-heart {
+
+
+      font-size: 45px;
+
+
+      bottom: 8px;
+
+
+    }
+
+
+    .teddy-cake {
+
+
+      font-size: 35px;
+
+
+      bottom: 25px;
+
+
+    }
+
+
+    .cyber-title {
+
+
+      font-size: 1.8rem;
+
+
+      margin: 15px 0 12px 0;
+
+
+      line-height: 1.2;
+
+
+    }
+
+
+    .cyber-age {
+
+
+      font-size: 2.8rem;
+
+
+      margin: 12px 0 12px 0;
+
+
+    }
+
+
+    .cyber-message {
+
+
+      font-size: 1.1rem;
+
+
+      margin: 15px 0 20px 0;
+
+
+      line-height: 1.6;
+
+
+    }
+
+
+    .cyber-button {
+
+
+      font-size: 1.1rem;
+
+
+      padding: 15px 20px;
+
+
       width: 100%;
-      padding-bottom: 4px;
-      justify-content: center;
-      scrollbar-width: thin;
+
+
+      border-radius: 25px;
+
+
+      margin-top: 15px;
+
+
+      min-height: 50px;
+
     }
-    .thumbnail {
-      width: 44px;
-      height: 44px;
-      object-fit: cover;
-      border-radius: 8px;
-      border: 2px solid #0ff3;
-      box-shadow: 0 0 8px #00fff7aa;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: border 0.2s, opacity 0.2s, box-shadow 0.2s;
-      background: #111;
-    }
-    .thumbnail.active {
-      border: 2.5px solid #ff00de;
-      box-shadow: 0 0 12px #ff00de, 0 0 18px #00fff7;
-      opacity: 1;
-    }
-    .neon-footer {
-      margin: 10px auto 0 auto;
-      color: #fff;
-      font-size: 0.92rem;
+
+
+    .cyber-counter {
+
+
+      top: 15px;
+
+
+      left: 50%;
+
+
+      transform: translateX(-50%);
+
+
+      padding: 10px 20px;
+
+
+      font-size: 1rem;
+
+
+      border-radius: 20px;
+
+
+      min-width: 120px;
+
+
+
+
+
+
+
+
       text-align: center;
-      text-shadow: 0 0 6px #00fff7, 0 0 10px #ff00de;
-      font-weight: 500;
-      letter-spacing: 1px;
-      z-index: 2;
+
+
+
+
+
+
+
+
+
+
+
+
     }
-    @media (max-width: 600px) {
-      .main-card { padding: 8px 1vw 8px 1vw; max-width: 99vw; }
-      .slider-photo { width: 96vw; max-width: 99vw; height: 60vw; max-height: 60vw; }
-      .slider-arrow { width: 34px; height: 34px; font-size: 1.6rem; }
-      .neon-title { font-size: 1.18rem; }
-      .neon-message { font-size: 0.98rem; }
-      .music-btn { top: 6px; right: 8px; width: 38px; height: 38px; font-size: 1.2rem; }
-      .neon-footer { font-size: 0.98rem; }
+
+
+    .cyber-heart-lock {
+
+
+      width: 60px;
+
+
+      height: 60px;
+
+
+      right: 15px;
+
+
+      bottom: 80px;
+
+
     }
-    @media (max-width: 400px) {
-      .main-card { padding: 4px 1vw 4px 1vw; }
-      .neon-title { font-size: 1rem; }
-      .neon-message { font-size: 0.9rem; }
-      .slider-photo { width: 98vw; height: 60vw; min-width: 40px; min-height: 40px; }
-      .slider-arrow { width: 38px; height: 38px; font-size: 1.4em; }
+
+
+    .cyber-heart-lock::before {
+
+
+      font-size: 45px;
+
+
     }
-    @media (max-width: 480px) {
-      .slider-photo-block, .slider-photo {
-        max-width: 98vw;
-      }
-      .slider-photo {
-        height: 180px;
-      }
-      .photo-caption {
-        font-size: 0.95em;
-        padding: 5px 6px;
-      }
+
+
+    .cyber-key {
+
+
+      font-size: 20px;
+
+
+      top: -8px;
+
+
+      right: -8px;
+
+
     }
-  </style>
+
+
+    .cyber-speaking-teddy {
+
+
+      width: 50px;
+
+
+      height: 50px;
+
+
+      font-size: 2rem;
+
+
+      left: 15px;
+
+
+      bottom: 15px;
+
+
+    }
+
+
+    .cyber-speech-bubble {
+
+
+      left: 15px;
+
+
+      bottom: 70px;
+
+
+      max-width: 75vw;
+
+
+      font-size: 1rem;
+
+
+      padding: 12px 15px;
+
+
+      border-radius: 15px;
+
+
+    }
+
+
+    .cyber-speech-bubble::after {
+
+
+      left: 20px;
+
+
+      border-left: 8px solid transparent;
+
+
+      border-right: 8px solid transparent;
+
+
+      border-top: 8px solid rgba(0,0,0,0.9);
+
+
+      bottom: -8px;
+
+
+    }
+
+
+  }
+
+
+
+
+
+  @media (max-width: 400px) {
+
+
+    .cyber-title {
+
+
+      font-size: 1.5rem;
+
+
+    }
+
+
+    .cyber-age {
+
+
+      font-size: 2.4rem;
+
+
+    }
+
+
+    .cyber-message {
+
+
+      font-size: 1rem;
+
+
+    }
+
+
+    .cyber-button {
+
+
+      font-size: 1rem;
+
+
+      padding: 12px 15px;
+
+
+    }
+
+
+    .teddy-container {
+
+
+      width: 100px;
+
+
+      height: 100px;
+
+
+    }
+
+
+    .teddy-bear {
+
+
+      font-size: 60px;
+
+
+    }
+
+
+    .teddy-heart {
+
+
+      font-size: 40px;
+
+
+    }
+
+
+    .teddy-cake {
+
+
+      font-size: 30px;
+
+
+    }
+
+
+  }
+
+
+
+
+
+  .photo-gallery {
+
+
+    display: flex;
+
+
+    justify-content: center;
+
+
+    gap: 18px;
+
+
+    margin: 18px 0 10px 0;
+
+
+  }
+
+
+  .neon-photo {
+
+
+    width: 90px;
+
+
+    height: 90px;
+
+
+    object-fit: cover;
+
+
+    border-radius: 18px;
+
+
+    box-shadow: 0 0 18px 4px #00ffff, 0 0 32px 8px #ff00ff44;
+
+
+    border: 2.5px solid #00ffff;
+
+
+    transition: box-shadow 0.5s, transform 0.5s;
+
+
+    opacity: 0;
+
+
+    animation: photoAppear 1.2s forwards;
+
+
+  }
+
+
+  .neon-photo:nth-child(2) { animation-delay: 0.5s; }
+
+
+  @keyframes photoAppear {
+
+
+    from { opacity: 0; transform: scale(0.7); }
+
+
+    to { opacity: 1; transform: scale(1); }
+
+
+  }
+
+
+  .neon-line {
+
+
+    width: 100%;
+
+
+    height: 4px;
+
+
+    background: linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ff00);
+
+
+    border-radius: 2px;
+
+
+    margin: 18px 0 18px 0;
+
+
+    box-shadow: 0 0 18px #00ffff, 0 0 32px #ff00ff44;
+
+
+    animation: neonLineAnim 3s linear infinite alternate;
+
+
+  }
+
+
+  @keyframes neonLineAnim {
+
+
+    0% { filter: brightness(1.2); }
+
+
+    100% { filter: brightness(2); }
+
+
+  }
+
+
+
+
+
+  /* Новые летающие звезды */
+
+
+  .flying-stars {
+
+
+    position: fixed;
+
+
+    top: 0;
+
+
+    left: 0;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    pointer-events: none;
+
+
+    z-index: 5;
+
+
+  }
+
+
+
+
+
+  .flying-stars .star {
+
+
+    position: absolute;
+
+
+    font-size: 30px;
+
+
+    animation: flyStar 8s linear infinite;
+
+
+    opacity: 0.7;
+
+
+  }
+
+
+
+
+
+  .flying-stars .star:nth-child(1) {
+
+
+    top: 10%;
+
+
+    left: 10%;
+
+
+    animation-delay: 0s;
+
+
+    animation-duration: 12s;
+
+
+  }
+
+
+
+
+
+  .flying-stars .star:nth-child(2) {
+
+
+    top: 20%;
+
+
+    right: 15%;
+
+
+    animation-delay: 2s;
+
+
+    animation-duration: 10s;
+
+
+  }
+
+
+
+
+
+  .flying-stars .star:nth-child(3) {
+
+
+    bottom: 30%;
+
+
+    left: 20%;
+
+
+    animation-delay: 4s;
+
+
+    animation-duration: 14s;
+
+
+  }
+
+
+
+
+
+  .flying-stars .star:nth-child(4) {
+
+
+    bottom: 20%;
+
+
+    right: 10%;
+
+
+    animation-delay: 6s;
+
+
+    animation-duration: 11s;
+
+
+  }
+
+
+
+
+
+  @keyframes flyStar {
+
+
+    0% {
+
+
+      transform: translateX(-100px) translateY(0) rotate(0deg);
+
+
+      opacity: 0;
+
+
+    }
+
+
+    10% {
+
+
+      opacity: 0.8;
+
+
+    }
+
+
+    90% {
+
+
+      opacity: 0.8;
+
+
+    }
+
+
+    100% {
+
+
+      transform: translateX(calc(100vw + 100px)) translateY(-200px) rotate(360deg);
+
+
+      opacity: 0;
+
+
+    }
+
+
+  }
+
+
+
+
+
+  /* Летающие пузыри */
+
+
+  .floating-bubbles {
+
+
+    position: fixed;
+
+
+    top: 0;
+
+
+    left: 0;
+
+
+    width: 100%;
+
+
+    height: 100%;
+
+
+    pointer-events: none;
+
+
+    z-index: 4;
+
+
+  }
+
+
+
+
+
+  .floating-bubbles .bubble {
+
+
+    position: absolute;
+
+
+    font-size: 25px;
+
+
+    animation: floatBubble 15s ease-in-out infinite;
+
+
+    opacity: 0.6;
+
+
+  }
+
+
+
+
+
+  .floating-bubbles .bubble:nth-child(1) {
+
+
+    top: 15%;
+
+
+    left: 5%;
+
+
+    animation-delay: 0s;
+
+
+    animation-duration: 18s;
+
+
+  }
+
+
+
+
+
+  .floating-bubbles .bubble:nth-child(2) {
+
+
+    top: 25%;
+
+
+    right: 8%;
+
+
+    animation-delay: 3s;
+
+
+    animation-duration: 16s;
+
+
+  }
+
+
+
+
+
+  .floating-bubbles .bubble:nth-child(3) {
+
+
+    bottom: 25%;
+
+
+    left: 12%;
+
+
+    animation-delay: 6s;
+
+
+    animation-duration: 20s;
+
+
+  }
+
+
+
+
+
+  .floating-bubbles .bubble:nth-child(4) {
+
+
+    bottom: 15%;
+
+
+    right: 5%;
+
+
+    animation-delay: 9s;
+
+
+    animation-duration: 17s;
+
+
+  }
+
+
+
+
+
+  @keyframes floatBubble {
+
+
+    0% {
+
+
+      transform: translateY(100vh) translateX(0) scale(0.5);
+
+
+      opacity: 0;
+
+
+    }
+
+
+    10% {
+
+
+      opacity: 0.7;
+
+
+      transform: scale(1);
+
+
+    }
+
+
+    50% {
+
+
+      transform: translateY(50vh) translateX(50px) scale(1.2);
+
+    }
+
+
+    90% {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      opacity: 0.7;
+
+
+    }
+
+
+    100% {
+
+
+      transform: translateY(-100px) translateX(100px) scale(0.8);
+
+
+      opacity: 0;
+
+
+    }
+
+
+  }
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
+
 <body>
-  <div class="neon-bg"></div>
-  <div class="main-card" id="mainCard">
-    <div class="neon-heart" id="heart">
-      <svg viewBox="0 0 100 90"><path d="M10,30 Q10,10 30,10 Q50,10 50,30 Q50,10 70,10 Q90,10 90,30 Q90,60 50,85 Q10,60 10,30 Z" fill="none" stroke="#ff00de" stroke-width="6"/></svg>
+
+
+
+
+
+<!-- Неоновый фон -->
+
+
+<div class="neon-bg"></div>
+
+
+
+
+
+<div class="main-container">
+
+
+  <div class="neon-card">
+
+
+    <div class="teddy-container" id="teddyContainer">
+
+
+      <div class="teddy">
+
+
+        <div class="teddy-bear" id="teddyBear">🐻</div>
+
+
+        <div class="teddy-cake" id="teddyCake">🎂</div>
+
+
+      </div>
+
     </div>
-    <div class="neon-title">Зодрӯз муборак, Мавлуда!</div>
-    <div class="neon-message" id="neonMessage">Мавлудаи азиз!<br>Имрӯз ту мисли ситора — зебо, равшан ва нотакрорӣ! Бигзор зиндагият пур аз муҳаббат, ханда ва сюрпризҳои ширин бошад. 22 сола шуданат муборак!</div>
-    <div class="slider-photo-block">
-      <button class="slider-arrow" id="arrowLeft" aria-label="Қафо">&#8592;</button>
-      <img class="slider-photo" id="sliderPhoto" src="" alt="Акс" style="cursor:zoom-in;" />
-      <button class="slider-arrow" id="arrowRight" aria-label="Пеш">&#8594;</button>
-      <div class="photo-caption" id="photoCaption"></div>
-      <div class="thumbnails-row" id="thumbnailsRow"></div>
+
+
+    <div class="photo-gallery">
+
+
+      <img src="14.jpg" class="neon-photo" alt="photo1" />
+
+
+      <img src="11.jpg" class="neon-photo" alt="photo2" />
+
+
+
+
+
+
     </div>
+
+
+    <div class="neon-line"></div>
+
+
+    <h1 class="cyber-title">Зодрӯз муборак, Дилноза!</h1>
+
+
+    <div class="cyber-age" id="cyberAge">21 🎂</div>
+
+
+    <p class="cyber-message">
+
+
+      Имрӯз рӯзи таваллуди ту! 🎉<br>
+
+
+      Бигзор ҳар рӯзе, ки дорӣ, пур аз муҳаббат, хушбахтӣ ва шодӣ бошад! 💖<br>
+
+
+      Ту махсуси ва зебо ҳастӣ! ✨💕
+
+
+    </p>
+
+
+    <button class="cyber-button" id="cyberSurpriseBtn">Бигзор дилат шод шавад! 🐻</button>
+
   </div>
-  <div class="neon-footer">Бо муҳаббат ва табассум 💖</div>
-  <script>
-    const photos = [
-      {src: 'Photo/1709698863699.jpg', caption: 'Мавлуда — Фионаи ҳақиқӣ!'},
-      {src: 'Photo/1709700253216.jpg', caption: 'Мавлуда аз ҳама шоҳдухтарони мультфилм зеботар аст!'},
-      {src: 'Photo/IMG_20230317_090927_286.jpg', caption: 'Агар мультфилми нав месохтанд, Мавлуда қаҳрамони асосӣ мешуд!'},
-      {src: 'Photo/IMG_20230404_210014_603.jpg', caption: 'Ҳатто Шрек дар назди зебоии Мавлуда таслим шуд!'},
-      {src: 'Photo/IMG_20230405_140748_033.jpg', caption: 'Зебоие, ки ҳатто Шрекро наҷот медиҳад!'},
-      {src: 'Photo/IMG_20230419_143816_411.jpg', caption: 'Мавлуда — қаҳрамон ва шоҳдухтар дар як шахсият!'},
-      {src: 'Photo/IMG_20240227_122800.jpg', caption: 'Мавлуда кадт 50 сантиметр забонт 2 метр'},
-      {src: 'Photo/IMG_20240420_114459.jpg', caption: 'Мавлуда ҳатто аждаҳоро ба ҳайрат меорад!'},
-      {src: 'Photo/IMG_20240420_114538.jpg', caption: 'Мавлуда — ягона қаҳрамонест, ки ба ҳама лозим аст!'},
-      {src: 'Photo/IMG_20240420_122519.jpg', caption: 'Мавлуда — Фионаи ҳақиқӣ, ки Шрекро мафтун кард!'},
-      {src: 'Photo/IMG_20240423_183542.jpg', caption: 'Мавлуда ва Шрек — ду қалб, як афсона!'},
-      {src: 'Photo/IMG_20240911_235152.jpg', caption: 'Ҳатто Хар аз  мултьфилми Шрек мехоҳад бо Мавлуда акс гирад!'},
-      {src: 'Photo/IMG-20240712-WA0019.jpg', caption: 'Мавлуда — Фионаи замони мо!'},
-      {src: 'Photo/IMG-20240712-WA0029.jpg', caption: 'Лабханди Мавлуда — мисли афсонаҳои Шрек, фаромӯшнашаванда!'},
-      {src: 'Photo/IMG-20241228-WA0014.jpg', caption: 'Мавлудае, ки дили Шрекро бурд!'},
-      {src: 'Photo/IMG-20241228-WA0020.jpg', caption: 'Мавлуда ва Шрек ҳамдигарро комилан мефаҳманд!'},
-      {src: 'Photo/IMG-20241228-WA0021.jpg', caption: 'Мавлуда ва Шрек — мисли Фиона ва Шрек, ҳамеша якҷо!'},
-      {src: 'Photo/IMG-20241228-WA0032.jpg', caption: 'Чунин зебоиро ҳатто дар мультфилм намеёбӣ!'},
-      {src: 'Photo/IMG-20250212-WA0017.jpg', caption: 'Муҳаббати Мавлуда  — илҳомбахш барои ҳама!'},
-      {src: 'Photo/Snapchat-262580908.jpg', caption: 'Snapchat низ аз чунин зебоӣ ҳайрон аст!'},
-      {src: 'Photo/Snapchat-757811065.jpg', caption: 'Мавлуда — беҳтарин, ва ин ҳақиқат аст!'}
-    ];
-    let currentPhoto = 0;
-    const sliderPhoto = document.getElementById('sliderPhoto');
-    const photoCaption = document.getElementById('photoCaption');
-    function showPhoto(idx) {
-      sliderPhoto.src = photos[idx].src;
-      photoCaption.textContent = photos[idx].caption;
-      // Обновить активную миниатюру
-      document.querySelectorAll('.thumbnail').forEach((el, i) => {
-        if (i === idx) el.classList.add('active');
-        else el.classList.remove('active');
-      });
+
+
+</div>
+
+
+
+
+
+<!-- Новые летающие элементы -->
+
+
+<div class="flying-stars">
+
+
+  <div class="star">⭐</div>
+
+
+  <div class="star">🌟</div>
+
+
+  <div class="star">✨</div>
+
+
+  <div class="star">🌟</div>
+
+
+</div>
+
+
+
+
+
+<div class="floating-bubbles">
+
+
+  <div class="bubble">💎</div>
+
+
+  <div class="bubble">🔮</div>
+
+
+  <div class="bubble">💎</div>
+
+
+  <div class="bubble">🔮</div>
+
+
+</div>
+
+
+
+
+
+<!-- Сердце с ключом -->
+
+
+<div class="cyber-heart-lock" id="cyberHeartLock">
+
+
+  <div class="cyber-key">🔑</div>
+
+
+</div>
+
+
+
+
+
+<!-- Говорящий мишка -->
+
+
+<div class="cyber-speaking-teddy" id="cyberSpeakingTeddy">🐻</div>
+
+
+<div class="cyber-speech-bubble" id="cyberSpeechBubble">Зодрӯзат муборак, Дилноза! 🎂</div>
+
+
+
+
+
+<!-- Счетчик посещений -->
+
+
+<div class="cyber-counter" id="cyberCounter">Боздидҳо: 1</div>
+
+
+
+
+
+<script>
+
+
+  // Счетчик посещений
+
+
+  let visits = localStorage.getItem('cyberBirthdayVisits') || 0;
+
+
+  visits = parseInt(visits) + 1;
+
+
+  localStorage.setItem('cyberBirthdayVisits', visits);
+
+
+  document.getElementById('cyberCounter').textContent = `Боздидҳо: ${visits}`;
+
+
+
+
+
+  // Аудио контекст
+
+
+  let soundEnabled = true;
+
+
+  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+
+
+
+
+  function playSound(frequency, duration) {
+
+
+    if (!soundEnabled) return;
+
+
+    try {
+
+
+      const oscillator = audioContext.createOscillator();
+
+
+      const gainNode = audioContext.createGain();
+
+
+      oscillator.connect(gainNode);
+
+
+      gainNode.connect(audioContext.destination);
+
+
+      oscillator.frequency.value = frequency;
+
+
+      oscillator.type = 'sine';
+
+
+      gainNode.gain.setValueAtTime(0.03, audioContext.currentTime);
+
+
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+
+
+      oscillator.start(audioContext.currentTime);
+
+
+      oscillator.stop(audioContext.currentTime + duration);
+
+
+    } catch (e) {
+
+
+      console.log('Audio not supported');
+
+
     }
-    // Стрелки
-    document.getElementById('arrowLeft').onclick = () => {
-      currentPhoto = (currentPhoto - 1 + photos.length) % photos.length;
-      showPhoto(currentPhoto);
-    };
-    document.getElementById('arrowRight').onclick = () => {
-      currentPhoto = (currentPhoto + 1) % photos.length;
-      showPhoto(currentPhoto);
-    };
-    // Миниатюры
-    const thumbnailsRow = document.getElementById('thumbnailsRow');
-    photos.forEach((photo, idx) => {
-      const thumb = document.createElement('img');
-      thumb.src = photo.src;
-      thumb.className = 'thumbnail' + (idx === currentPhoto ? ' active' : '');
-      thumb.alt = 'thumb';
-      thumb.onclick = () => {
-        currentPhoto = idx;
-        showPhoto(currentPhoto);
-      };
-      thumbnailsRow.appendChild(thumb);
+
+
+  }
+
+
+
+
+
+  // Приятная мелодия - ЗАМЕНЯЮ НА HAPPY BIRTHDAY
+
+
+  function playHappyBirthday() {
+
+
+    // Настоящая мелодия Happy Birthday
+
+
+    const notes = [261, 261, 293, 261, 349, 329, 261, 261, 293, 261, 392, 349, 261, 261, 523, 440, 349, 329, 293, 466, 466, 440, 349, 392, 349];
+
+
+    const durations = [0.5, 0.5, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 2, 0.5, 0.5, 1, 1, 1, 1, 1, 0.5, 0.5, 1, 1, 1, 2];
+
+
+    let currentTime = audioContext.currentTime;
+
+
+    notes.forEach((note, index) => {
+
+
+      setTimeout(() => {
+
+
+        playSound(note, durations[index]);
+
+
+      }, currentTime * 1000 + index * 600);
+
+
     });
-    showPhoto(currentPhoto);
-  </script>
+
+
+  }
+
+
+
+
+
+  // Анимация мишки
+
+
+  const teddyBear = document.getElementById('teddyBear');
+
+
+  const teddyCake = document.getElementById('teddyCake');
+
+
+  let animLock = false;
+
+
+
+
+
+  function teddyOpenHeartAndCake() {
+
+
+    if (animLock) return;
+
+
+    animLock = true;
+
+
+
+
+
+    teddyCake.classList.add('show');
+
+
+    playHappyBirthday();
+
+
+
+
+
+    setTimeout(() => {
+
+
+      teddyCake.classList.remove('show');
+
+
+      teddyBear.style.filter = 'drop-shadow(0 0 30px rgba(0, 255, 255, 1))';
+
+
+      setTimeout(() => {
+
+
+        teddyBear.style.filter = 'drop-shadow(0 0 20px rgba(0, 255, 255, 0.5))';
+
+
+        animLock = false;
+
+
+      }, 800);
+
+
+    }, 2000);
+
+
+  }
+
+
+
+
+
+  // Эффекты
+
+
+  function createConfetti() {
+
+
+    return; // Функция отключена - больше никаких круглых частиц!
+
+
+  }
+
+
+
+
+
+  function createHeart(x, y) {
+
+
+    const heart = document.createElement('div');
+
+
+    heart.className = 'cyber-heart-particle';
+
+
+    heart.textContent = '💖';
+
+
+    heart.style.left = x + 'px';
+
+
+    heart.style.top = y + 'px';
+
+
+    document.body.appendChild(heart);
+
+
+    setTimeout(() => heart.remove(), 5000);
+
+
+  }
+
+
+
+
+
+  function createSparkle(x, y) {
+
+
+    const sparkles = ['✨', '⭐', '🌟', '💫', '⚡', '🎆', '🎇', '🔮', '🌈'];
+
+
+    const sparkle = document.createElement('div');
+
+
+    sparkle.className = 'cyber-sparkle';
+
+
+    sparkle.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+
+
+    sparkle.style.left = x + 'px';
+
+
+    sparkle.style.top = y + 'px';
+
+
+    document.body.appendChild(sparkle);
+
+
+    setTimeout(() => sparkle.remove(), 3000);
+
+
+  }
+
+
+
+
+
+  // Говорящий мишка
+
+
+  const speakingTeddy = document.getElementById('cyberSpeakingTeddy');
+
+
+  const speechBubble = document.getElementById('cyberSpeechBubble');
+
+
+
+
+
+  const messages = [
+
+
+    "Зодрӯзат муборак, Дилноза! 🎂",
+
+
+    "Ту хеле зебо ҳастӣ! 💖",
+
+
+    "Имрӯз рӯзи ту аст! 🎉",
+
+
+    "Бигзор хушбахт боши! ✨",
+
+
+    "Ту махсуси! 🌟",
+
+
+    "Хуш омади! 🎈",
+
+
+    "Зодрӯзат муборак, Дилноза! 🎂",
+
+
+    "Ту зеботарин ҳастӣ! 💕",
+
+
+    "Ту пир шуди шу намекни дига! ✨",
+
+
+    "Ту магистри ҳама чиз ҳастӣ! 🔮"
+
+
+  ];
+
+
+
+
+
+  let currentMessageIndex = 0;
+
+
+  let isSpeaking = false;
+
+
+
+
+
+  function speakTeddy() {
+
+
+    if (isSpeaking) return;
+
+
+    isSpeaking = true;
+
+
+
+
+
+    const message = messages[currentMessageIndex];
+
+
+    speechBubble.textContent = message;
+
+
+    speechBubble.classList.add('show');
+
+
+
+
+
+    currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+
+
+
+
+
+    setTimeout(() => {
+
+
+      speechBubble.classList.remove('show');
+
+
+      isSpeaking = false;
+
+
+    }, 3000);
+
+
+  }
+
+
+
+
+
+  // События
+
+
+  const teddyContainer = document.getElementById('teddyContainer');
+
+
+  teddyContainer.addEventListener('click', (e) => {
+
+
+    teddyOpenHeartAndCake();
+
+
+    speakTeddy();
+
+
+  });
+
+
+  teddyContainer.addEventListener('touchstart', (e) => {
+
+
+    e.preventDefault();
+
+
+    teddyOpenHeartAndCake();
+
+
+    speakTeddy();
+
+
+  });
+
+
+
+
+
+  // Возраст
+
+
+  let clickCount = 0;
+
+
+  document.getElementById('cyberAge').addEventListener('click', (e) => {
+
+
+    clickCount++;
+
+
+
+
+
+    playSound(600 + clickCount * 30, 0.2);
+
+
+    createHeart(e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY);
+
+
+    createSparkle(e.clientX || e.touches[0].clientX, e.clientY || e.touches[0].clientY);
+
+
+
+
+
+    if (clickCount >= 5) {
+
+
+      document.getElementById('cyberAge').textContent = '21 🎂 🐻';
+
+
+      speakTeddy();
+
+
+    }
+
+
+
+
+
+    if (clickCount >= 10) {
+
+
+      document.getElementById('cyberAge').textContent = '21 🎂 🐻 👑';
+
+
+      speakTeddy();
+
+
+    }
+
+
+
+
+
+    if (clickCount >= 15) {
+
+
+      document.getElementById('cyberAge').textContent = '21 🎂 🐻 👑 💎';
+
+
+      speakTeddy();
+
+
+    }
+
+
+
+
+
+    if (clickCount >= 21) {
+
+
+      document.getElementById('cyberAge').textContent = '21 🎂 🐻 👑 💎 ✨';
+
+
+      speakTeddy();
+
+
+    }
+
+
+  });
+
+
+
+
+
+  // Сердце с ключом
+
+
+  document.getElementById('cyberHeartLock').addEventListener('click', (e) => {
+
+
+    playSound(1000, 0.3);
+
+
+    speakTeddy();
+
+
+
+
+
+    const heartLock = document.getElementById('cyberHeartLock');
+
+
+    heartLock.style.transform = 'scale(1.3) rotate(360deg)';
+
+
+    setTimeout(() => {
+
+
+      heartLock.style.transform = 'scale(1) rotate(0deg)';
+
+
+    }, 500);
+
+
+  });
+
+
+
+
+
+  // Кнопка сюрприза
+
+
+  document.getElementById('cyberSurpriseBtn').addEventListener('click', () => {
+
+
+    playSound(1000, 0.2);
+
+
+    speakTeddy();
+
+
+  });
+
+
+
+
+
+  // Говорящий мишка
+
+
+  speakingTeddy.addEventListener('click', () => {
+
+
+    speakTeddy();
+
+
+    playSound(600, 0.2);
+
+
+  });
+
+
+
+
+
+  // Инициализация
+
+
+  setTimeout(() => {
+
+
+    playSound(800, 0.2);
+
+
+    speakTeddy();
+
+
+    playLongMusic();
+
+
+  }, 1000);
+
+
+
+
+
+  // Длинная музыка - НОВАЯ ВЕСЕЛАЯ МЕЛОДИЯ
+
+
+  function playLongMusic() {
+
+
+    // Веселая мелодия с разными инструментами
+
+
+    const notes = [523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 1047, 880, 784, 659, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 1047, 880, 784, 659, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880, 784, 659, 523, 440, 523, 659, 784, 880];
+
+
+    const durations = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.5, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3];
+
+
+    let currentTime = audioContext.currentTime;
+
+
+    notes.forEach((note, index) => {
+
+
+      setTimeout(() => {
+
+
+        playSound(note, durations[index]);
+
+
+      }, currentTime * 1000 + index * 400);
+
+    });
+
+
+  }
+
+
+
+
+
+  // Поддержка касаний
+
+
+  document.getElementById('cyberAge').addEventListener('touchstart', (e) => {
+
+
+    e.preventDefault();
+
+
+    document.getElementById('cyberAge').click();
+
+
+  });
+
+
+
+
+
+  document.getElementById('cyberHeartLock').addEventListener('touchstart', (e) => {
+
+
+    e.preventDefault();
+
+
+    document.getElementById('cyberHeartLock').click();
+
+
+  });
+
+
+
+
+
+  speakingTeddy.addEventListener('touchstart', (e) => {
+
+
+    e.preventDefault();
+
+
+    speakingTeddy.click();
+
+
+  });
+
+
+</script>
+
+
+
+
 </body>
-</html> 
+
+</html>
