@@ -764,55 +764,7 @@
 
 
 
-  /* Счетчик посещений */
 
-
-  .cyber-counter {
-
-
-    position: fixed;
-
-
-    top: 30px;
-
-
-    left: 30px;
-
-
-    background: rgba(0, 0, 0, 0.8);
-
-
-    backdrop-filter: blur(10px);
-
-
-    padding: 15px 25px;
-
-
-    border-radius: 25px;
-
-
-    font-size: 1rem;
-
-
-    font-weight: 600;
-
-
-    color: #00ffff;
-
-
-    border: 1px solid rgba(0, 255, 255, 0.3);
-
-
-    z-index: 100;
-
-
-    font-family: 'Orbitron', monospace;
-
-
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-
-
-  }
 
 
 
@@ -1443,50 +1395,7 @@
     }
 
 
-    .cyber-counter {
 
-
-      top: 15px;
-
-
-      left: 50%;
-
-
-      transform: translateX(-50%);
-
-
-      padding: 10px 20px;
-
-
-      font-size: 1rem;
-
-
-      border-radius: 20px;
-
-
-      min-width: 120px;
-
-
-
-
-
-
-
-
-      text-align: center;
-
-
-
-
-
-
-
-
-
-
-
-
-    }
 
 
     .cyber-heart-lock {
@@ -2409,21 +2318,14 @@
 
 
 
-<!-- Счетчик посещений -->
 
-
-<div class="cyber-counter" id="cyberCounter">Боздидҳо: 1</div>
 
 
 
 
 
 <script>
-  // Счетчик посещений
-  let visits = localStorage.getItem('cyberBirthdayVisits') || 0;
-  visits = parseInt(visits) + 1;
-  localStorage.setItem('cyberBirthdayVisits', visits);
-  document.getElementById('cyberCounter').textContent = `Боздидҳо: ${visits}`;
+
 
   // Аудио контекст
   let soundEnabled = true;
